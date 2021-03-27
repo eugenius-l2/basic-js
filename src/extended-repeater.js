@@ -1,13 +1,14 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function repeater(str, options) {
+  
   let {repeatTimes, separator, addition, additionRepeatTimes, additionSeparator} = options;
   let result;
 
   repeatTimes = repeatTimes ? repeatTimes : 1;
   additionRepeatTimes = additionRepeatTimes ? additionRepeatTimes : 1;
   separator = separator ? separator : '+';
-  additionSeparator = additionSeparator ? additionSeparator : ''; 
+  additionSeparator = additionSeparator ? additionSeparator : '|'; 
   addition = (addition || typeof addition == 'boolean' || typeof addition == 'object') ? Array(additionRepeatTimes)
   .fill(addition)
   .map((item, index, array) => {
